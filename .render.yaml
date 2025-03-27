@@ -1,0 +1,9 @@
+
+services:
+  - type: web
+    name: numos-numerology
+    env: python
+    plan: free
+    buildCommand: ""
+    startCommand: "python backend/app.py"
+    autoDeploy: true
