@@ -1,10 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="mn">
 <head>
-  <title>Tamir Numerology</title>
+  <meta charset="UTF-8">
+  <title>Тооны зурхай</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    input, button {
+      font-size: 16px;
+      padding: 10px;
+      margin: 10px;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #e67e22;
+    }
+  </style>
 </head>
 <body>
-  <h1>Тавтай морилно уу!</h1>
-  <p>Энэ бол Tamir Numerology вэбсайт.</p>
+  <h1>Тамирын Тооны Зурхай</h1>
+  <p>Төрсөн огноогоо оруулаад, хувь хүний тоогоо мэдээрэй</p>
+
+  <form onsubmit="calculateNumerology(event)">
+    <input type="date" id="birthdate" required>
+    <br>
+    <button type="submit">Зурхайг харах</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    function calculateNumerology(event) {
+      event.preventDefault();
+      const date = new Date(document.getElementById('birthdate').value);
+      const total = date.getFullYear() + (date.getMonth() + 1) + date.getDate();
+
+      // Тоон утга гаргаж авах
+      let number = total;
+      while (number >= 10) {
+        number = number.toString().split('').reduce((a, b) => a + Number(b), 0);
+      }
+
+      // Тайлбар оноох
+      const meanings = {
+        1: "Та удирдагч, санаачлагч төрлийн хүн.",
+        2: "Та эв найрамдлыг эрхэмлэдэг, мэдрэмжтэй.",
+        3: "Та бүтээлч, хөгжилтэй, өөдрөг хүн.",
+        4: "Та хөдөлмөрч, тогтвортой, үнэнч.",
+        5: "Та адал явдалд дуртай, эрх чөлөөг эрхэмлэдэг.",
+        6: "Та халамжтай, гэр бүлсэг зан чанартай.",
+        7: "Та сэтгэгч, гүн гүнзгий эргэцүүлдэг.",
+        8: "Та удирдах чадвартай, амжилтанд хүрэх хүсэлтэй.",
+        9: "Та нигүүлсэнгүй, хүмүүнлэг сэтгэлтэй."
+      };
+
+      const resultText = `Таны хувь хүний тоо бол: <strong>${number}</strong><br>${meanings[number]}`;
+      document.getElementById('result').innerHTML = resultText;
+    }
+  </script>
 </body>
 </html>
