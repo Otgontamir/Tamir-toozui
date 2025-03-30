@@ -11,5 +11,5 @@ function generateChakra() {
       <li>Crown: 2 (Underactive)</li>
     </ul>
   `;
-  document.getElementById("report").innerHTML += chakraHtml;
+  document.getElementById("chakraResult").innerHTML = chakraHtml;
 }
