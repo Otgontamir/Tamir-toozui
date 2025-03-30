@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="mn">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -45,6 +46,12 @@
   <script>
     generateMatrixReport("1987-10-23");
   </script>
+<script>
+  function generatePDF() {
+    const element = document.getElementById("matrixResult");
+    html2pdf().from(element).save("matrits_tailan.pdf");
+  }
+</script>
 
 </body>
 </html>
