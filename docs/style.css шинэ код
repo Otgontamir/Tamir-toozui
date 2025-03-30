@@ -1,76 +1,40 @@
 body {
+  background-color: #f8f0fc;
   font-family: 'Arial', sans-serif;
-  background: #f4f1f8;
-  color: #333;
-  margin: 0;
-  padding: 0;
+  color: #3b2f63;
+  padding: 40px;
 }
 
 .container {
-  max-width: 700px;
-  margin: 3rem auto;
-  padding: 2rem;
-  background: #ffffff;
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(136, 102, 153, 0.2);
+  box-shadow: 0 0 10px #d8c1ea;
 }
 
-h1 {
-  text-align: center;
-  color: #6a0dad;
-  margin-bottom: 2rem;
-}
-
-form label {
-  display: block;
-  margin-top: 1rem;
-  font-weight: bold;
-  color: #6a0dad;
-}
-
-form input {
-  width: 100%;
-  padding: 0.5rem;
-  margin-top: 0.3rem;
+input, button {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 6px;
   border: 1px solid #ccc;
-  border-radius: 5px;
 }
 
-form button {
-  margin-top: 1.5rem;
-  padding: 0.8rem 1.5rem;
-  background: #6a0dad;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-form button:hover {
-  background: #582a8d;
-}
-
-#matrixOutput {
-  margin-top: 2rem;
-  background: #f9f5fc;
-  padding: 1.5rem;
-  border-radius: 8px;
-  border: 1px solid #e3d7f1;
-  line-height: 1.6;
-}
-
-#downloadBtn {
-  margin-top: 1.5rem;
-  background: #8c4bc4;
-  padding: 0.6rem 1.2rem;
-  border: none;
-  border-radius: 5px;
+button {
+  background-color: #b085d4;
   color: white;
   cursor: pointer;
 }
 
-#downloadBtn:hover {
-  background: #6a0dad;
+button:hover {
+  background-color: #8f62bb;
+}
+
+#report {
+  margin-top: 30px;
+  background: #fdfaff;
+  padding: 20px;
+  border-radius: 6px;
+  border: 1px dashed #b085d4;
 }
