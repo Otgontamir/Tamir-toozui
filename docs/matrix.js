@@ -76,7 +76,3 @@ function generateMatrixReport(birthdate) {
   document.getElementById("matrixResult").innerHTML = html;
 }
 <script src="matrix.js"></script>
-<script>
-  // Жишээ төрсөн огноо
-  generateMatrixReport("1987-10-23");
-</script>
