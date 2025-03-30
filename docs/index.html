@@ -1,46 +1,53 @@
 <!DOCTYPE html>
 <html lang="mn">
 <head>
-  <meta charset="UTF-8">
-  <title>Хувь заяаны матриц</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Хувь заяаны матриц by Tamir</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f3e8ff;
+      padding: 20px;
+      color: #333;
+    }
+
+    h2 {
+      color: #6b21a8;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      padding: 6px 0;
+    }
+
+    .matrix-box {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>🔮 Хувь заяаны матриц</h1>
-  <!-- ...Таны бусад HTML элементүүд... -->
 
-  <div id="report"></div>
-  <div id="chakraResult"></div>
-  <div id="yinYangResult"></div>
-
-</body>
-<div id="matrixResult"></div>
-
-    <label>Төрсөн огноо: 
-      <input type="date" id="birthDate">
-    </label>
-
-    <label>Нэр (кирилл): 
-      <input type="text" id="name">
-    </label>
-
-    <button onclick="generateMatrix()">📊 Матриц гаргах</button>
-    <button onclick="downloadPDF()">📥 Тайлан PDF болгох</button>
-
-    <div id="report"></div>
+  <div class="matrix-box">
+    <h2>Хувь заяаны матриц</h2>
+    <p><em>Жишээ огноо: 1987-10-23</em></p>
+    <div id="matrixResult"></div>
   </div>
 
-  <!-- Скриптүүд -->
-  <script src="chakra.js"></script>
-  <script src="yin_yang.js"></script>
-  <script src="toozol.js"></script>
+  <!-- Matrix script -->
+  <script src="matrix.js"></script>
+
+  <!-- Test execution -->
   <script>
-    function downloadPDF() {
-      const element = document.getElementById("report");
-      html2pdf().from(element).save("matrits_tailan.pdf");
-    }
+    generateMatrixReport("1987-10-23");
   </script>
 </body>
 </html>
+
