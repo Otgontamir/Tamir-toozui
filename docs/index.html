@@ -1,66 +1,38 @@
 <!DOCTYPE html>
 <html lang="mn">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Хувь заяаны матриц by Tamir</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Хувь заяаны матриц</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
-<script src="html2pdf.bundle.js"></script>
-<script>
-  function downloadPDF() {
-    const element = document.getElementById('report'); // тайлангийн div
-    html2pdf().from(element).save('matrix-report.pdf');
-  }
-</script>
-  <body>
+<body>
   <div class="container">
     <h1>🔮 Хувь заяаны матриц</h1>
 
-    <form id="matrixForm">
-      <label>Төрсөн огноо:</label>
-      <input type="date" id="birthDate" required />
+    <label>Төрсөн огноо: 
+      <input type="date" id="birthDate">
+    </label>
 
-      <label>Нэр (кирилл):</label>
-      <input type="text" id="name" placeholder="Жишээ: Тамираа" required />
+    <label>Нэр (кирилл): 
+      <input type="text" id="name">
+    </label>
 
-      <button type="submit">➕ Матриц гаргах</button>
-    </form>
+    <button onclick="generateMatrix()">📊 Матриц гаргах</button>
+    <button onclick="downloadPDF()">📥 Тайлан PDF болгох</button>
 
-    <div id="results" style="display:none;">
-      <h2>🧾 Матрицын тайлан</h2>
-      <div id="matrixOutput"></div>
-      <button id="downloadBtn">📥 PDF татах</button>
-    </div>
+    <div id="report"></div>
   </div>
 
   <!-- Скриптүүд -->
-  <script src="toozol.js"></script>
   <script src="chakra.js"></script>
   <script src="yin_yang.js"></script>
-  <script src="html2pdf.bundle.js"></script>
+  <script src="toozol.js"></script>
   <script>
-    document.getElementById('matrixForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const birthDate = document.getElementById('birthDate').value;
-      const name = document.getElementById('name').value;
-      if (!birthDate || !name) return;
-
-      const output = generateMatrixReport(birthDate, name);
-      document.getElementById('matrixOutput').innerHTML = output;
-      document.getElementById('results').style.display = 'block';
-    });
-
-    document.getElementById('downloadBtn').addEventListener('click', function () {
-      const element = document.getElementById('results');
-      html2pdf().from(element).save('Tamir_Matrix_Report.pdf');
-    });
+    function downloadPDF() {
+      const element = document.getElementById("report");
+      html2pdf().from(element).save("matrits_tailan.pdf");
+    }
   </script>
 </body>
 </html>
-<div id="report">
-  <!-- энд матрицын тооцооллын үр дүн, тайлбар байна -->
-</div>
-<button onclick="downloadPDF()">📥 Тайланг PDF болгох</button>
-<div id="report"></div>
-
