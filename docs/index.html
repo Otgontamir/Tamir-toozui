@@ -1,25 +1,53 @@
 <!DOCTYPE html>
 <html lang="mn">
 <head>
-  <meta charset="UTF-8">
-  <title>Тамир Тоон Зурхай</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Хувь заяаны матриц by Tamir</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Тамир Тоон Зурхай</h1>
+  <div class="container">
+    <h1>🔮 Хувь заяаны матриц</h1>
 
-  <label>Нэр:</label>
-  <input type="text" id="name" placeholder="Нэрээ оруулна уу" />
+    <form id="matrixForm">
+      <label>Төрсөн огноо:</label>
+      <input type="date" id="birthDate" required />
 
-  <label>Төрсөн огноо:</label>
-  <input type="date" id="birthdate" />
+      <label>Нэр (кирилл):</label>
+      <input type="text" id="name" placeholder="Жишээ: Тамираа" required />
 
-  <button onclick="generateReport()">Тооцоолох</button>
+      <button type="submit">➕ Матриц гаргах</button>
+    </form>
 
-  <div id="report"></div>
+    <div id="results" style="display:none;">
+      <h2>🧾 Матрицын тайлан</h2>
+      <div id="matrixOutput"></div>
+      <button id="downloadBtn">📥 PDF татах</button>
+    </div>
+  </div>
 
+  <!-- Скриптүүд -->
   <script src="toozol.js"></script>
   <script src="chakra.js"></script>
   <script src="yin_yang.js"></script>
+  <script src="html2pdf.bundle.js"></script>
+  <script>
+    document.getElementById('matrixForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const birthDate = document.getElementById('birthDate').value;
+      const name = document.getElementById('name').value;
+      if (!birthDate || !name) return;
+
+      const output = generateMatrixReport(birthDate, name);
+      document.getElementById('matrixOutput').innerHTML = output;
+      document.getElementById('results').style.display = 'block';
+    });
+
+    document.getElementById('downloadBtn').addEventListener('click', function () {
+      const element = document.getElementById('results');
+      html2pdf().from(element).save('Tamir_Matrix_Report.pdf');
+    });
+  </script>
 </body>
 </html>
