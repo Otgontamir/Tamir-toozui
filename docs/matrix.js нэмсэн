@@ -89,3 +89,6 @@ function calculateMatrixReport(date) {
     }
   }
 }
+function generateMatrixReport(date) {
+  calculateMatrixReport(date);
+}
