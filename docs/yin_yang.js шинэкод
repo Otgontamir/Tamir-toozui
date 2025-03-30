@@ -1,10 +1,7 @@
 function generateYinYang() {
-  const yin = 3;
-  const yang = 97;
-
-  const result = `
+  const yinYangHtml = `
     <h3>☯️ Инь Ян баланс:</h3>
-    <p>Yin: ${yin}% | Yang: ${yang}% → <strong>Yang dominant</strong></p>
+    <p>Yin: 3% | Yang: 97% → Yang dominant тайлбарууд орох хэрэгтэй</p>
   `;
-  document.getElementById("report").innerHTML += result;
+  document.getElementById("yinYangResult").innerHTML = yinYangHtml;
 }
