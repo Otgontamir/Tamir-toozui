@@ -1,59 +1,63 @@
 <!DOCTYPE html>
 <html lang="mn">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Хувь заяаны матриц</title>
   <style>
     body {
-      font-family: sans-serif;
-      background-color: #f8f4fc;
+      font-family: Arial, sans-serif;
+      background-color: #f5f3f9;
+      margin: 0;
+      padding: 0;
       color: #333;
-      padding: 20px;
     }
+
     .matrix-box {
+      max-width: 700px;
+      margin: 40px auto;
       background-color: #fff;
+      padding: 30px;
       border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
+
+    h2 {
+      color: #6c4caf;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
     #matrix-points {
-      margin-top: 30px;
+      margin-top: 40px;
       background: #fff;
-      padding: 20px;
+      padding: 25px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
   </style>
 </head>
 <body>
-
   <div class="matrix-box">
     <h2>Хувь заяаны матриц</h2>
-    <p><em>Жишээ огноо: 1987-10-23</em></p>
+    <p><em>Жишээ огноо:</em> 1987-10-23</p>
     <div id="matrixResult"></div>
   </div>
 
-  <!-- A–G цэгийн үр дүн -->
-  <div id="matrix-points">
-    <h3>Матрицын A–G гол цэгүүд</h3>
+  <div id="matrix-points" class="matrix-box">
+    <h3>📌 Матрицын A–G гол цэгүүд</h3>
     <ul id="matrix-list"></ul>
   </div>
 
-  <!-- JS файл дуудаж, матриц үүсгэх -->
+  <!-- JS Файл дуудах -->
   <script src="matrix.js"></script>
   <script>
-    generateMatrixReport("1987-10-23");
+    generateMatrixReport("1987-10-23"); // Хэрэглэгчийн огноог авч ашиглах боломжтой
   </script>
-<script>
-  function generatePDF() {
-    const element = document.getElementById("matrixResult");
-    html2pdf().from(element).save("matrits_tailan.pdf");
-  }
-</script>
-
-
-
-
-
+</body>
+</html>
