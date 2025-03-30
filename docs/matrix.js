@@ -121,3 +121,8 @@ const month = birth.getMonth() + 1;
 const year = birth.getFullYear();
 const arc = calculateMatrixPoints(day, month, year);
 showMatrixPoints(arc);
+
+function generatePDF() {
+  const element = document.getElementById("matrixResult");
+  html2pdf().from(element).save("matrits_tailan.pdf");
+}
