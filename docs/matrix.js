@@ -1,4 +1,5 @@
 const arcanaNames = {
+  "", // 0 байхгүй
   1: "Илбэчин — Хүсэл зориг, санаачилга",
   2: "Дээд санваартан — Зөн совин, мэргэн ухаан",
   3: "Хатан хаан — Бүтээлч байдал, халамж",
@@ -118,4 +119,5 @@ const birth = new Date(date);
 const day = birth.getDate();
 const month = birth.getMonth() + 1;
 const year = birth.getFullYear();
-calculateMatrixPoints(day, month, year);
+const arc = calculateMatrixPoints(day, month, year);
+showMatrixPoints(arc);
