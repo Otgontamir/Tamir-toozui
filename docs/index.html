@@ -2,34 +2,27 @@
 <html lang="mn">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Хувь заяаны матриц by Tamir</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Хувь заяаны матриц</title>
   <style>
     body {
       font-family: sans-serif;
-      background-color: #f3e8ff;
-      padding: 20px;
+      background-color: #f8f4fc;
       color: #333;
+      padding: 20px;
     }
-
-    h2 {
-      color: #6b21a8;
-    }
-
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    li {
-      padding: 6px 0;
-    }
-
     .matrix-box {
       background-color: #fff;
       border-radius: 10px;
       padding: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    #matrix-points {
+      margin-top: 30px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
   </style>
 </head>
@@ -41,14 +34,20 @@
     <div id="matrixResult"></div>
   </div>
 
-  <!-- Matrix script -->
-  <script src="matrix.js"></script>
+  <!-- A–G цэгийн үр дүн -->
+  <div id="matrix-points">
+    <h3>Матрицын A–G гол цэгүүд</h3>
+    <ul id="matrix-list"></ul>
+  </div>
 
-  <!-- Test execution -->
+  <!-- JS файл дуудаж, матриц үүсгэх -->
+  <script src="matrix.js"></script>
   <script>
     generateMatrixReport("1987-10-23");
   </script>
+
 </body>
 </html>
-<div id="matrixResult"></div>
+
+
 
