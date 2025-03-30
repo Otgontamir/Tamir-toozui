@@ -6,7 +6,14 @@
   <title>Хувь заяаны матриц by Tamir</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<script src="html2pdf.bundle.js"></script>
+<script>
+  function downloadPDF() {
+    const element = document.getElementById('report'); // тайлангийн div
+    html2pdf().from(element).save('matrix-report.pdf');
+  }
+</script>
+  <body>
   <div class="container">
     <h1>🔮 Хувь заяаны матриц</h1>
 
@@ -51,3 +58,7 @@
   </script>
 </body>
 </html>
+<div id="report">
+  <!-- энд матрицын тооцооллын үр дүн, тайлбар байна -->
+</div>
+<button onclick="downloadPDF()">📥 Тайланг PDF болгох</button>
