@@ -1,18 +1,10 @@
-function analyzeYinYang(nameNumber, vibration) {
-  const total = nameNumber + vibration;
-  const yin = (nameNumber * 2) % 100;
-  const yang = 100 - yin;
+function generateYinYang() {
+  const yin = 3;
+  const yang = 97;
 
-  let dominance = '';
-  if (yin > yang) dominance = 'Yin dominant';
-  else if (yang > yin) dominance = 'Yang dominant';
-  else dominance = 'Balanced';
-
-  const advice = dominance === 'Yin dominant'
-    ? "Инь давамгайлсан — сэтгэлийн тэнцвэр, гаднах орчноос хамгаалах шаардлагатай."
-    : dominance === 'Yang dominant'
-    ? "Ян давамгайлсан — илүү зөөлөн, уян хатан байдлыг хичээ."
-    : "Энергийн тэнцвэр сайн байна.";
-
-  return `Yin: ${yin}% | Yang: ${yang}% → <b>${dominance}</b><br/>${advice}`;
+  const result = `
+    <h3>☯️ Инь Ян баланс:</h3>
+    <p>Yin: ${yin}% | Yang: ${yang}% → <strong>Yang dominant</strong></p>
+  `;
+  document.getElementById("report").innerHTML += result;
 }
